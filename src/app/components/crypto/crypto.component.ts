@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, map, Observable } from 'rxjs';
 import { CryptoModel } from 'src/app/models/crypto.model';
 import { CryptoService } from 'src/app/services/crypto.service';
 
@@ -11,7 +11,9 @@ import { CryptoService } from 'src/app/services/crypto.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class CryptoComponent {
-  readonly Crypto$: Observable<CryptoModel[]> = this._CryptoService.getAll();
+  readonly Crypto$: Observable<CryptoModel[]> = this._CryptoService.getAll().pipe(
+    map(() => [])
+  );;
 
   constructor(private _CryptoService: CryptoService){}
 }

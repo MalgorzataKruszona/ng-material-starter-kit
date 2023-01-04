@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
+import { MatCardModule } from '@angular/material/card';
 import { NamaListComponent } from './nama-list.component';
 
 @NgModule({
-  imports: [],
+  imports: [MatCardModule],
   declarations: [NamaListComponent],
   providers: [],
   exports: [NamaListComponent]
