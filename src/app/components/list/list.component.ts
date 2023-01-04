@@ -3,14 +3,15 @@ import { Observable } from 'rxjs';
 import { CheckboxService } from '../../services/checkbox.service';
 
 @Component({
-  selector: 'app-checkbox',
-  styleUrls: ['./checkbox.component.scss'],
-  templateUrl: './checkbox.component.html',
+  selector: 'app-list',
+  styleUrls: ['./list.component.scss'],
+  templateUrl: './list.component.html',
   encapsulation: ViewEncapsulation.Emulated,
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class CheckboxComponent {
-  readonly Checkbox$: Observable<string[]> = this._checkboxService.getAll();
+export class ListComponent {
+  readonly List$: Observable<string[]> = this._checkboxService.getAll();
 
-  constructor(private _checkboxService: CheckboxService) {}
+  constructor(private _checkboxService: CheckboxService) {
+  }
 }
