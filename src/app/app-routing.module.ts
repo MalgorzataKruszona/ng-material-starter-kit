@@ -9,14 +9,21 @@ import { ListComponent } from './components/list/list.component';
 import { ListComponentModule } from './components/list/list.component-module';
 import { RadioComponentModule } from './components/radio/radio.component-module';
 import { RadioComponent } from './components/radio/radio.component';
+import { HolidaysComponent } from './components/holidays/holidays.component';
+import { HolidaysComponentModule } from './components/holidays/holidays.component-module';
+import { SelectionModel } from '@angular/cdk/collections';
+import { SelectionComponentModule } from './components/selection/selection.component-module';
+import { SelectionComponent } from './components/selection/selection.component';
 
 @NgModule({
   imports: [RouterModule.forRoot([
     {path: 'crypto', component: CryptoComponent},
     {path: 'checkbox-categories', component: CheckboxComponent},
     {path: 'categories-menu', component: ListComponent},
-    {path: 'list-1-single-radio-crypto', component: RadioComponent}
-  ]), CryptoComponentModule, CheckboxComponentModule, ListComponentModule, RadioComponentModule],
+    {path: 'list-1-single-radio-crypto', component: RadioComponent},
+    {path: 'public-holidays', component: HolidaysComponent},
+    {path: 'categories', component: SelectionComponent},
+  ]), CryptoComponentModule, CheckboxComponentModule, ListComponentModule, RadioComponentModule, HolidaysComponentModule, SelectionComponentModule],
 
   exports: [RouterModule]
 })
