@@ -3,5 +3,5 @@ export interface TableTagsModel {
  readonly id: string;
  readonly title: string;
  readonly description: string;
- readonlyjobTagIds: string
+ readonly jobTagIds: string
 }
