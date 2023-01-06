@@ -1,10 +1,9 @@
-<mat-card>
-  <mat-card-title></mat-card-title>
-  <mat-card-content>
 <mat-grid-list cols="2" rowHeight="100px">
-  <mat-grid-tile style="background-color: aqua;" *ngFor="let item of JobPostGridList$ | async">
-  {{item.title}}
+  <mat-grid-tile *ngFor= "let item of JobPostGridList$ | async">
+    <mat-card>
+      <mat-card-title>{{item.title}}</mat-card-title>
+      <mat-card-content>{{item.title}}</mat-card-content>
+    </mat-card>
 </mat-grid-tile>
 </mat-grid-list>
-  </mat-card-content>
-</mat-card>
+
