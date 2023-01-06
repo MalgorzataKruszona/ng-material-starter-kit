@@ -1,6 +1,23 @@
 <mat-card>
   <mat-card-title>Categories list</mat-card-title>
-  <mat-card-content><section>
-  <mat-checkbox *ngFor="let item of Checkbox$ | async">{{item}}</mat-checkbox>
-</section></mat-card-content>
+  <mat-card-content>
+    <section *ngIf="Checkbox$ | async as checkbox; else loading">
+            <ng-container *ngIf="checkbox.length > 0; else empty">
+
+            </ng-container>
+
+  <mat-checkbox *ngFor="let item of checkbox">{{item}}</mat-checkbox>
+</section>
+<ng-template #empty>
+  <img src="https://img.freepik.com/darmowe-wektory/schemat-przedstawiajacy-strukture-gabki_1308-105554.jpg?w=1800&t=st=1672940651~exp=1672941251~hmac=fe84a7278c52a20e8955b431f2539157db7f8d21049021fe395a76b3063bfc7a">
+  <a href="https://pl.freepik.com/darmowe-wektory/schemat-przedstawiajacy-strukture-gabki_26350361.htm?fbclid=IwAR1-WCvXgBns7st-iHittTf1d3o2GQWkklSq8u5yvXF5z7qYZ4FI_wrKQu0">Obraz autorstwa brgfx</a> na Freepik
+</ng-template>
+<ng-template #loading>
+<mat-progress-spinner
+        [color]="'accent'"
+        [mode]="'indeterminate'"
+        [value]="50">
+      </mat-progress-spinner>
+</ng-template>
+</mat-card-content>
 </mat-card>

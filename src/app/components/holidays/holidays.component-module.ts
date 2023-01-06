@@ -12,10 +12,12 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
 import { MatButtonModule } from '@angular/material/button';
 import { MatMenuModule } from '@angular/material/menu';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HolidaysComponent } from './holidays.component';
 
 @NgModule({
-  imports: [MatCardModule, MatListModule, CommonModule, FlexModule, MatFormFieldModule, MatSelectModule, ReactiveFormsModule, MatOptionModule, MatGridListModule, MatExpansionModule, MatButtonToggleModule, MatButtonModule, MatMenuModule],
+  imports: [MatCardModule, MatListModule, CommonModule, FlexModule, MatFormFieldModule, MatSelectModule, ReactiveFormsModule, MatOptionModule, MatGridListModule, MatExpansionModule, MatButtonToggleModule, MatButtonModule, MatMenuModule, MatProgressSpinnerModule, MatProgressBarModule],
   declarations: [HolidaysComponent],
   providers: [],
   exports: [HolidaysComponent]

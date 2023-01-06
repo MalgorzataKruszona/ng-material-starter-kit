@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import { Observable } from 'rxjs';
+import { delay, map, Observable } from 'rxjs';
 import { CheckboxService } from '../../services/checkbox.service';
 
 @Component({
@@ -10,7 +10,9 @@ import { CheckboxService } from '../../services/checkbox.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SelectionComponent {
-  readonly Selection$: Observable<string[]> = this._checkboxService.getAll();
+  readonly Selection$: Observable<string[]> = this._checkboxService.getAll().pipe(
+    map(() => [])
+  );;
 
   constructor(private _checkboxService: CheckboxService) {
   }

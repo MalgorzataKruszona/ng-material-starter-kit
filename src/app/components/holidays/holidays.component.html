@@ -1,11 +1,26 @@
 <mat-card>
-    <mat-card-title></mat-card-title>
-    <mat-card-content>
-<button mat-button [matMenuTriggerFor]="menu">Chose an option</button>
-<mat-menu #menu="matMenu">
-  <button mat-menu-item *ngFor="let item of Holidays$ | async">
-  {{item.name}}
-</button>
-</mat-menu>
-    </mat-card-content>
+   <mat-card-title></mat-card-title>
+   <mat-card-content>
+   <mat-form-field appearance="fill"
+                   *ngIf="Holidays$ | async as holidays; else loading">
+   <ng-container *ngIf="holidays.length > 0; else empty">
+                   <mat-label>Choose an option</mat-label>
+   <mat-select >
+     <mat-option *ngFor="let item of holidays">{{item.localName}}    
+ </mat-option>
+    
+</mat-select></ng-container>
+ </mat-form-field>
+ <ng-template #empty>
+   Oops! There is no data!
+ </ng-template>
+ <ng-template #loading>
+ <mat-progress-bar
+        class="example-margin"
+        [color]="'warn'"
+        [mode]="'indeterminate'"
+        [value]="25">
+      </mat-progress-bar>
+ </ng-template>
+ </mat-card-content>
 </mat-card>
