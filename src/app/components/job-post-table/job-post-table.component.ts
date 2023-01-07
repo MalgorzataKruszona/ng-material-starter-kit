@@ -13,9 +13,10 @@ import { TableTagsService } from '../../services/table-tags.service';
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class JobPostTableComponent {
-  readonly JobPostTable$: Observable<JobPostsModel[]> = this._jobPostsService.getAll();
+  readonly  JobPostTable$: Observable<JobPostsModel[]> = this._jobPostsService.getAll();
   readonly TableTags$: Observable<TableTagsModel[]> = this._tableTagsService.getAll();
 
-  constructor(private _jobPostsService: JobPostsService, private _tableTagsService: TableTagsService) {
+  constructor(private _jobPostsService: JobPostsService, private _tableTagsService: TableTagsService)
+  {
   }
 }

@@ -1,18 +1,19 @@
-<mat-card>
-    <mat-card-title>Influencers and Followers</mat-card-title>
-    <mat-card-content>
-        <mat-list role="list">
-            <mat-list-item role="influListitem" *ngFor="let item of influList$ | async">
-                <img src="{{item.avatar}}" height="50" style="border-radius: 50%">
-                {{item.name}}
-
-                <mat-chip-list aria-label="Fish selection">
-                    <mat-chip>
-                         {{item.followedBy[0].name}} 
-                    </mat-chip>
-                </mat-chip-list> 
-            </mat-list-item>
-        </mat-list>
-
-    </mat-card-content>
-</mat-card>
+  
+    <mat-card>
+        <mat-card-title>Influencers and Followers</mat-card-title>
+        <mat-card-content>
+            <mat-list role="list" *ngIf= "influList$ | async as influList$">
+                <mat-list-item role="influListitem" *ngFor="let item of influList$">
+                    <img src="{{item.avatar}}" height="50" style="border-radius: 50%">
+                    {{item.name}}
+    
+                    <mat-chip-list aria-label="Fish selection">
+                        <mat-chip *ngFor="let name of item.followedBy">
+                             {{name.name}} 
+                        </mat-chip>
+                    </mat-chip-list> 
+                </mat-list-item>
+            </mat-list>
+    
+        </mat-card-content>
+    </mat-card>

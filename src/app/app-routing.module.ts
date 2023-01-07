@@ -30,6 +30,9 @@ import { JobPostTableComponentModule } from './components/job-post-table/job-pos
 import { JobPostGridListComponentModule } from './components/job-post-grid-list/job-post-grid-list.component-module';
 import { InfluListComponentModule } from './components/influ-list/influ-list.component-module';
 
+;
+
+
 @NgModule({
   imports: [RouterModule.forRoot([
     { path: 'list-1-single-list-names', component: NamaListComponent },
