@@ -1,0 +1,20 @@
+<form [formGroup]="polishUniversities" 
+(ngSubmit)="onPolishUniversitiesSubmitted(polishUniversities)">
+<div>
+   
+
+<mat-label>Choose an option</mat-label>      <div><mat-radio-group formControlName="ControlName" required>
+        <mat-error *ngIf="polishUniversities.get('name')!.invalid">name is invalid</mat-error>
+    
+  <mat-radio-button *ngFor="let item of polishUniversities$ | async" [value]="item">{{item}}</mat-radio-button>
+</mat-radio-group></div>
+
+
+
+    
+</div>
+<div>
+    <button type="submit" mat-raised-button color="primary">Submit</button>
+</div>
+</form>
+

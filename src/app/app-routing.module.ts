@@ -15,6 +15,12 @@ import { CryptoTableComponent } from './components/crypto-table/crypto-table.com
 import { JobPostTableComponent } from './components/job-post-table/job-post-table.component';
 import { JobPostGridListComponent } from './components/job-post-grid-list/job-post-grid-list.component';
 import { InfluListComponent } from './components/influ-list/influ-list.component';
+import { NameFormComponent } from './components/name-form/name-form.component';
+import { AgeFormComponent } from './components/age-form/age-form.component';
+import { EmailFormComponent } from './components/email-form/email-form.component';
+import { CommentComponent } from './components/comment/comment.component';
+import { UserRoleComponent } from './components/user-role/user-role.component';
+import { PolishUniversitiesComponent } from './components/polish-universities/polish-universities.component';
 import { CryptoComponentModule } from './components/crypto/crypto.component-module';
 import { CheckboxComponentModule } from './components/checkbox/checkbox.component-module';
 import { ListComponentModule } from './components/list/list.component-module';
@@ -29,6 +35,12 @@ import { CryptoTableComponentModule } from './components/crypto-table/crypto-tab
 import { JobPostTableComponentModule } from './components/job-post-table/job-post-table.component-module';
 import { JobPostGridListComponentModule } from './components/job-post-grid-list/job-post-grid-list.component-module';
 import { InfluListComponentModule } from './components/influ-list/influ-list.component-module';
+import { NameFormComponentModule } from './components/name-form/name-form.component-module';
+import { AgeFormComponentModule } from './components/age-form/age-form.component-module';
+import { EmailFormComponentModule } from './components/email-form/email-form.component-module';
+import { CommentComponentModule } from './components/comment/comment.component-module';
+import { UserRoleComponentModule } from './components/user-role/user-role.component-module';
+import { PolishUniversitiesComponentModule } from './components/polish-universities/polish-universities.component-module';
 
 ;
 
@@ -49,8 +61,14 @@ import { InfluListComponentModule } from './components/influ-list/influ-list.com
     { path: 'crypto-table', component: CryptoTableComponent },
     { path: 'job-post-table', component: JobPostTableComponent },
     { path: 'list-1-multi-grid-list-jobs', component: JobPostGridListComponent },
-    { path: 'list-1-nested-list-influencers', component: InfluListComponent }
-  ]), CryptoComponentModule, CheckboxComponentModule, ListComponentModule, RadioComponentModule, HolidaysComponentModule, SelectionComponentModule, NamaListComponentModule, ProductListComponentModule, MultiListComponentModule, MultiListTableComponentModule, CryptoTableComponentModule, JobPostTableComponentModule, JobPostGridListComponentModule, InfluListComponentModule],
+    { path: 'list-1-nested-list-influencers', component: InfluListComponent },
+    { path: 'form-1-control-name', component: NameFormComponent },
+    { path: 'form-1-control-age', component: AgeFormComponent },
+    { path: 'form-1-control-email', component: EmailFormComponent },
+    { path: 'form-1-control-comment', component: CommentComponent },
+    { path: 'form-1-control-select-user-roles', component: UserRoleComponent },
+    { path: 'form-1-control-radio-universities', component: PolishUniversitiesComponent }
+  ]), CryptoComponentModule, CheckboxComponentModule, ListComponentModule, RadioComponentModule, HolidaysComponentModule, SelectionComponentModule, NamaListComponentModule, ProductListComponentModule, MultiListComponentModule, MultiListTableComponentModule, CryptoTableComponentModule, JobPostTableComponentModule, JobPostGridListComponentModule, InfluListComponentModule, NameFormComponentModule, AgeFormComponentModule, EmailFormComponentModule, CommentComponentModule, UserRoleComponentModule, PolishUniversitiesComponentModule],
 
   exports: [RouterModule]
 })

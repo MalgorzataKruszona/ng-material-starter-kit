@@ -1,0 +1,18 @@
+<form [formGroup]="ageForm" 
+(ngSubmit)="onAgeFormSubmitted(ageForm)">
+<div>
+    <mat-form-field appearance="fill">
+        <mat-label>Age</mat-label>
+        <input matInput type="number" placeholder="Age" 
+        formControlName="age" required>
+        <mat-error *ngIf="ageForm.get('age')!.invalid">You are under age :(</mat-error>
+    </mat-form-field>
+    {{ageForm.value.age}}
+</div>
+<div>
+    <button type="submit" mat-raised-button 
+    [disabled]="!ageForm.valid"
+    color="warn">Ok</button>
+</div>
+</form>
+
